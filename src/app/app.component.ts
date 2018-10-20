@@ -17,6 +17,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit(){
     this.accounts = this.accountsService.accounts;
+    this.accountsService.statusUpdated.subscribe(
+      ({name, status}) => alert('Account ' + name + ' has new Status: ' + status)
+    );
   }
 
 }

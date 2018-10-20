@@ -30,6 +30,6 @@ export class AccountComponent {
     this.accountsService.updateStatus(this.id, status);
 
     // emit an event
-    this.accountsService.statusUpdated.emit(status)
+    this.accountsService.statusUpdated.emit({name: this.accountsService.accounts[this.id].name, status: this.accountsService.accounts[this.id].status})
   }
 }
